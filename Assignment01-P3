@@ -1,10 +1,10 @@
-numbers = input("Enter a series of numbers separated by spaces: ")
-numbers_list = numbers.split()
+numbers = tuple(input("Enter a series of numbers: "))
+print(numbers)
 
 even_count = 0
 odd_count = 0
 
-for num in numbers_list:
+for num in numbers:
     if int(num) % 2 == 0:
         even_count += 1
     else:
