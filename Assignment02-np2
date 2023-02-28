@@ -1,6 +1,6 @@
 ascii_dict = {}
 
-for i in range(97, 123): # ASCII values for a-z
+for i in range(97, 123):
     ascii_dict[chr(i)] = i
 
 print(ascii_dict)
