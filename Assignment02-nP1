@@ -1,0 +1,12 @@
+def sort_list(tuples):
+    return sorted(tuples, key=lambda x: x[-1])
+
+n = int(input("Enter the number of tuples: "))
+tuples_list = []
+for i in range(n):
+    print(f"Enter the tuple {i+1}: ")
+    tup = tuple(map(int, input().split()))
+    tuples_list.append(tup)
+
+sorted_list = sort_list(tuples_list)
+print(f"The sorted list is: {sorted_list}")

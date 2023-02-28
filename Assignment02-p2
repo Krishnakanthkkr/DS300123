@@ -1,0 +1,3 @@
+Ascii_dict = {chr(i):i for i in range(ord('a'), ord('z')+1)}
+
+print(Ascii_dict)
