@@ -1,0 +1,43 @@
+import json
+
+class Employee:
+    def __init__(self, name, dob, height, city, state):
+        self.name = name
+        self.dob = dob
+        self.height = height
+        self.city = city
+        self.state = state
+
+    def __str__(self):
+        return f"{self.name}, {self.dob}, {self.height}, {self.city}, {self.state}"
+
+# Read employee information from JSON file
+with open("employee.json", "r") as f:
+    data = json.load(f)
+
+employees = []
+for e in data["employees"]:
+    employee = Employee(e["name"], e["dob"], e["height"], e["city"], e["state"])
+    employees.append(employee)
+
+# Print list of Employee objects
+for e in employees:
+    print(e)
+
+
+
+# indian_states = {
+#     "Andhra Pradesh": "Amaravati",
+#     "Gujarat": "Gandhinagar",
+#     "Karnataka": "Bengaluru",
+#     "Maharashtra": "Mumbai",
+#     "Tamil Nadu": "Chennai",
+#     "Telangana": "Hyderabad",
+#     "West Bengal": "Kolkata"
+# }
+
+# # Write Indian states and their capitals to JSON file
+# with open("indian_states.json", "w") as f:
+#     json.dump(indian_states, f)
+
+# print("Data written successfully to file.")
