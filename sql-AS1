@@ -1,0 +1,34 @@
+QUERY-1:
+SELECT COUNT(*) AS NumSalespeople
+FROM SalesPeople
+WHERE Sname ILIKE 'A%';
+
+
+QUERY-2:
+SELECT S.Snum, S.Sname
+FROM SalesPeople AS S
+INNER JOIN Orders AS O ON S.Snum = O.Snum
+GROUP BY S.Snum, S.Sname
+HAVING SUM(O.Amt) > 2000
+
+
+QUERY-3:
+SELECT COUNT(*) AS NumSalespeople
+FROM SalesPeople
+WHERE City = 'Newyork'
+
+
+QUERY-4:
+SELECT City, COUNT(*) AS NumSalespeople
+FROM SalesPeople
+WHERE City IN ('London', 'Paris')
+GROUP BY City
+
+
+QUERY-5:
+SELECT S.Snum, S.Sname, COUNT(*) AS NumOrders, O.Odate
+FROM SalesPeople AS S
+INNER JOIN Orders AS O ON S.Snum = O.Snum
+GROUP BY S.Snum, S.Sname, O.Odate
+
+
